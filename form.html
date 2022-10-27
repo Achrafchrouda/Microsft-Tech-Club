@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTC ENETCOM</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="images/mtclogo.png">
+
+</head>
+<body style="background-image: url(images/perspective-exterior-nobody-empty-box.jpg);">
+    <nav style="background-color: #ef8422;" id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div style="margin-left: 0%;"class="container">
+
+            <!-- Image Logo -->
+            <a  class="navbar-brand logo-image" href="index.html"><img src="images/mtclogo.png" alt="alternative"></a> 
+
+            
+
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html#header">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#aboutus">About US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contactus">Contact Us</a>
+                    </li>
+
+                    
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#app" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Our Application</a>
+                        
+                    </li>
+                </ul>
+
+                <span class="nav-item" style="position: absolute;right: 130px ;">
+                    <a class="btn-solid-sm" href="login.html"> Login </a>
+                </span>
+
+                <span class="nav-item" style="position: absolute;right: 10px ;">
+                    <a class="btn-solid-sm" href="form.html"> Join Us </a>
+                </span>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+
+
+    <!-- Contact -->
+
+<div id="contact" class="form-1" style="margin-top: 70px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="text-container">
+                    <div class="section-title">BECOME A MEMBER</div>
+                    <h2>Submit the form to join us</h2>
+                    
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-6">
+
+                <!-- Contact Form -->
+                <form>
+                    <div class="form-group">
+                        <input type="text" id="firstName" class="form-control-input" placeholder="First Name" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid First Name
+                          </div> 
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="lastName" class="form-control-input" placeholder="Last Name" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid Last Name
+                          </div> 
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="email" id="email" class="form-control-input" placeholder="Email" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid Email
+                          </div> 
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" class="form-control-input" placeholder="Password" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid Password
+                          </div> 
+                    </div>
+                    <div class="form-group">
+                        <select name="option"  class="form-control-input" id="option">
+
+                            <option value="Option"> Option </option>
+                            <option value="GEC"> GEC </option>
+                            <option value="GII"> GII </option>
+                            <option value="IDSD"> IDSD </option>
+                            <option value="L.TIC"> L.TIC </option>
+                            <option value="MSE"> MSE </option>
+                            <option value="MRT"> MRT </option>    
+                            <option value="MII"> MII </option>
+                            <option value="MTS"> MTS </option>
+                            <option value="GT"> GT </option>
+                            
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="phone" class="form-control-input" placeholder="Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="submit" class="form-control-submit-button">Submit</button>
+                    </div>
+                    <div class="alert alert-success" id="success" style="display: none;" role="alert">
+                        Great you are a member now , <a href="login.html" class="alert-link">login </a>
+                        to access your acount
+                      </div>
+
+                      <div class="alert alert-danger" id="failed" style="display: none;" role="alert">
+                        Email provied is already existe try to  
+                        <a href="login.html" class="alert-link">login </a>
+                      </div>
+                </form>
+                <!-- end of contact form -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of form-1 -->    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+
+    $(document).ready(()=>{ 
+
+        const expressionReguliere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
+
+
+        $('#submit').click(()=>{
+
+        console.log($('#option').val())     
+
+    if(expressionReguliere.test($('#email').val())==false){
+        $('#email').addClass('is-invalid')
+        return false;
+
+    }if($('#password').val()==""){
+        $('#password').addClass('is-invalid')
+        return false;
+
+    }if($('#name').val() == ""){
+        $('#name').addClass('is-invalid')
+        return false;
+    }
+
+    else{
+            
+
+             $.post('http://localhost:3000/student',{
+
+                firstName:$('#firstName').val(),
+                lastName:$('#lastName').val(),
+                password:$('#password').val(),
+                email:$('#email').val(),
+                option:$('#option').val(),
+                phone:$('#phone').val()
+            },(data,status)=>{
+                console.log(data)
+
+                if(data == 'existe'){
+                    $('#failed').css('display','block')
+                }else{
+                    $('#failed').css('display','none')
+                    $('#success').css('display','block')
+
+                    
+
+                $('#firstName').val(''),
+                $('#lastName').val(''),
+                $('#password').val(''),
+                $('#email').val(''),
+                $('#option').val('Option'),
+                $('#phone').val('')
+
+            $('#email').removeClass('is-invalid')
+            $('#password').removeClass('is-invalid')
+            $('#firstName').removeClass('is-invalid')
+            $('#lasttName').removeClass('is-invalid')
+            $('#success').css('display','block')
+                    
+
+        }
+
+                
+            })
+
+        }
+
+
+        })
+    }
+
+    )
+
+</script>
+
+
+</body>
+</html>
+
+
+

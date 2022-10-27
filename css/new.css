@@ -1,0 +1,33 @@
+header{
+    background-color: rgb(255, 0, 0);
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+};
+#para1{
+    border: 2PX dashed blue;
+    background-color: yellow;
+    position: sticky;
+    top: 0;
+    right: 0
+    ;
+}
+main{
+    border: 3px solid #000;
+    position: relative;
+}
+h1{
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    background-color: yellow;
+}
+.div2{
+    position: absolute;
+    top: 0%;
+}
+.div2:hover{
+    background-color: red;
+}

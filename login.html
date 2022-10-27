@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTC ENETCOM</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="images/mtclogo.png">
+</head>
+<body>
+    <nav  style="background-color: #ef8422;" id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div style="margin-left: 0%" class="container">
+
+            <!-- Image Logo -->
+            <a  class="navbar-brand logo-image" href="index.html"><img src="images/mtclogo.png" alt="alternative"></a> 
+
+            
+
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html#header">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#aboutus">About US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contactus">Contact Us</a>
+                    </li>
+
+                    
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#app" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Our Application</a>
+                        
+                    </li>
+                </ul>
+
+                <span class="nav-item" style="position: absolute;right: 130px ;">
+                    <a class="btn-solid-sm" href="login.html"> Login </a>
+                </span>
+
+                <span class="nav-item" style="position: absolute;right: 10px ;">
+                    <a class="btn-solid-sm" href="form.html"> Join Us </a>
+                </span>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+
+    <div id="contact" class="form-1" style="margin-top: 170px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <div class="section-title">Login</div>
+                        <h2>Submit the form to access your acount</h2>
+                        
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+    
+                    <!-- Contact Form -->
+                    <form>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" class="form-control-input" placeholder="Email" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid Email
+                              </div>    
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="password" id="password" class="form-control-input" placeholder="Password" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid Password
+                              </div>
+                        </div>
+                     
+                        <div class="form-group">
+                            <button type="button" id="btn" class="form-control-submit-button">Submit</button>
+                        </div>
+
+                        <!-- <div class="alert alert-success" id="success" style="display: none;" role="alert">
+                            You are a member now , Thanks
+                          </div> -->
+    
+                          <div class="alert alert-danger" id="failed" style="display: none;" role="alert">
+                            Email or password are incorrect  
+                            
+
+                    </form>
+                    <!-- end of contact form -->
+    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form-1 -->  
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(()=>{
+    
+    $(document).ready(()=>{
+
+        const expressionReguliere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
+
+$('button').click(()=>{
+
+    if(expressionReguliere.test($('#email').val())==false){
+        $('#email').addClass('is-invalid')
+
+    }else if($('#password').val()==""){
+        $('#password').addClass('is-invalid')
+    }
+
+    else{
+        $('#email').removeClass('is-invalid')
+        $('#password').removeClass('is-invalid')
+
+
+     $.post('http://localhost:3000/login',{
+
+        email:$('#email').val(),
+        password:$('#password').val(),
+        
+    },(data,status)=>{
+        console.log(data)
+
+        if(data != "failed"){
+            window.location.replace("http://localhost:5500/student.html"); 
+        }else{
+            $('#failed').css('display','block')
+        }
+
+    })
+
+
+}
+
+
+})
+
+})
+
+
+})
+
+
+
+</script>
+
+</body>
+</html>
